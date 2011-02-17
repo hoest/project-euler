@@ -6,3 +6,11 @@
 # By considering the terms in the Fibonacci sequence whose values do not exceed four million, find the sum of the even-valued terms.
 #
 
+def fibonacci(a = -1, b = 1, max = 4000000):
+  while a + b < max:
+    a, b = b, a + b
+    yield b
+
+print sum(i for i in fibonacci() if not i % 2)
+
+# result: 4613732
